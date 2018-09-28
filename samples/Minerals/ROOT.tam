@@ -1,0 +1,12 @@
+A new day has dawned.
+
+You walk your trek towards the large mountain in the East, which towers over the plains in the West.
+
+You stumble upon the rocky beginning of the mountain, making your journey thoroughly more difficult.
+
+Crossing over a small hill of black, dense, igneous rock you notice a speck of blue. Not necessarily a rock. Just blue.
+
+{
+    "inspect blue": "iblue",
+    "move on": "village"
+}

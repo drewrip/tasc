@@ -1,0 +1,12 @@
+You move closer to the blue color.
+
+You slowly begin to notice that, against your initial judgment, the blue is a rock. Definitely not a normal rock, but a rock none the less.
+
+Bending down to get a closer look at the newly found rock, you see it's about almost spherical with a width of about 2cm.
+
+To get a better idea of what you just found, you pick the blue up. Its extremely heaving for its size.
+
+{
+    "pick it": "mountain",
+    "leave it": "lion"
+}
