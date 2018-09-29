@@ -1,7 +1,6 @@
-package OpenTA
+package tasc
 
 import (
-    "fmt"
 )
 
 type Branch struct {
@@ -11,4 +10,11 @@ type Branch struct {
     Option string
     //Options for progession from the current branch
     Branches []Branch
+}
+
+// Base case for the recursive branch definition, the end of a branch of the story
+var BASE Branch = Branch{
+    TextPath: "END",
+    Option: "END",
+    Branches: nil,
 }
