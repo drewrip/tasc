@@ -14,9 +14,9 @@ func SetPath(p string){
 func Init(){
     Story := Branch{
             TextPath: "root.tam",
-            Option: "",
+            Choice: "",
             Branches: []Branch{},
         }
-    fmt.Println(Story.GetMeta())
+    fmt.Println(Story.Decode())
     fmt.Println("RootPath: " + Path + "root.tam")
 }

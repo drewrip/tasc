@@ -6,7 +6,7 @@ You stumble upon the rocky beginning of the mountain, making your journey thorou
 
 Crossing over a small hill of black, dense, igneous rock you notice a speck of blue. Not necessarily a rock. Just blue.
 
-{
-    "inspect blue": "iblue",
-    "move on": "village"
-}
+[
+    {"input": "inspect blue", "result": "iblue"},
+    {"input": "move on", "result": "village"}
+]

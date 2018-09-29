@@ -7,6 +7,6 @@ Bending down to get a closer look at the newly found rock, you see it's about al
 To get a better idea of what you just found, you pick the blue up. Its extremely heaving for its size.
 
 {
-    "pick it": "mountain",
-    "leave it": "lion"
+    {"input": "pick it", "result": "mountain"},
+    {"input": "leave it", "result": "lion"}
 }

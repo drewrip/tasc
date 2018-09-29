@@ -7,7 +7,7 @@ Once upon a time...
 
 
 {
-    "Move Right": "right_result_filename",
-    "Move Left": "left_result_filename"
+    {"input": "Move Right", "result": "right_result_filename"},
+    {"input": "Move Left", "result": "left_result_filename"}
 }
 ```

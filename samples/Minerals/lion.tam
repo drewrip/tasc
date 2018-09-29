@@ -9,5 +9,5 @@ You try to run away, but the mountain lion chases you down.
 You die, there, on the side of the East Mountain.
 
 {
-    "END": "END"
+    {"input": "END", "result": "END"}
 }

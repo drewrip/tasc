@@ -5,5 +5,5 @@ You continue on with your hike, winding up, then back down the East Mountain, re
 Time passes, you grow old, and you never remember the one spot of incredible blue in your vision.
 
 {
-    "END": "END"
+    {"input": "END", "result": "END"}
 }

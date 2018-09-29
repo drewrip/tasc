@@ -1,15 +1,22 @@
 package tasc
 
 import (
-    "fmt"
+    "encoding/json"
     "io/ioutil"
-    //"regexp"
+    "regexp"
 )
 
+// Go struct represents the options defined in tam files
+type Option struct{
+    Input string
+    Result string
+}
+
+// Pulls the meta data out of the branch page
 func (b *Branch) GetMeta() string{
 
     //Accounting for the base branch case
-    if b.TextPath == "END" && b.Option == "END" {
+    if b.TextPath == "END" && b.Choice == "END" {
         return "END"
     }
 
@@ -17,6 +24,15 @@ func (b *Branch) GetMeta() string{
     if err != nil {
         panic(err)
     }
-    fmt.Println(string(fileText))
-    return ""
+
+    r, _ := regexp.Compile("\\[([^()])*\\]")
+
+    return string(r.Find(fileText))
+}
+
+// Decodes the meta section of a tam file and returns it as an array of Options
+func (b *Branch) Decode() []Option {
+    var opt []Option
+    json.Unmarshal([]byte(b.GetMeta()), &opt)
+    return opt
 }
