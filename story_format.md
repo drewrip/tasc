@@ -5,6 +5,7 @@
 Once upon a time...
 
 
+¤
 
 {
     {"input": "Move Right", "result": "right_result_filename"},

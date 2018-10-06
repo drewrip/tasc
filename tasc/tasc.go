@@ -13,10 +13,9 @@ func SetPath(p string){
 //Creating the initial root branch of the story
 func Init(){
     Story := Branch{
-            TextPath: "root.tam",
+            TextPath: "root",
             Choice: "",
             Branches: []Branch{},
         }
-    fmt.Println(Story.Decode())
-    fmt.Println("RootPath: " + Path + "root.tam")
+    fmt.Println(Story.ParseStory())
 }

@@ -5,8 +5,8 @@ You slowly begin to notice that, against your initial judgment, the blue is a ro
 Bending down to get a closer look at the newly found rock, you see it's about almost spherical with a width of about 2cm.
 
 To get a better idea of what you just found, you pick the blue up. Its extremely heaving for its size.
-
-{
+¤
+[
     {"input": "pick it", "result": "mountain"},
     {"input": "leave it", "result": "lion"}
-}
+]
