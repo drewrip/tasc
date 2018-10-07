@@ -6,7 +6,6 @@ import (
     "crypto/sha256"
     "encoding/hex"
     "encoding/json"
-    "fmt"
 )
 
 func CreateDir(){
@@ -47,7 +46,6 @@ func (b *Branch) ReplaceWithHashed(){
 }
 func (b *Branch) GenManifest(){
     b.ReplaceWithHashed()
-    fmt.Println(b)
     j, err := json.Marshal(b)
     if err != nil {
         panic(err)
