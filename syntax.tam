@@ -1,0 +1,9 @@
+You come upon a fork in the road...
+
+¤
+
+{
+    {"input": "Go Right", "result": "right_result_filename"},
+    {"input": "Go Left", "result": "left_result_filename"}
+}
+```
