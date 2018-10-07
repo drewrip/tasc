@@ -1,6 +1,10 @@
 package tasc
 
 import (
+    "encoding/json"
+    "crypto/sha256"
+    "encoding/hex"
+    "fmt"
 )
 
 type Branch struct {
@@ -18,9 +22,34 @@ type Option struct{
     Result string
 }
 
-// Base case for the recursive branch definition, the end of a branch of the story
-var BASE Branch = Branch{
-    TextPath: "END",
-    Choice: "END",
-    Branches: nil,
+func (b *Branch)PopulateOptions(){
+    // Recursive base case
+    if b.TextPath == "END" && b.Choice == "END" {
+        return
+    }
+
+    _, meta := ParseFile(b.TextPath)
+    Opts := DecodeMeta(meta)
+    // For each option listed in a tam file, parse into a Branch struct
+    for _,x := range Opts{
+        stage := Branch{}
+        fmt.Println("PLACE: " + x.Result)
+        stage.Choice = x.Input
+        stage.Branches = []Branch{}
+        hash := sha256.Sum256([]byte(x.Result))
+        stage.TextPath = hex.EncodeToString(hash[:])
+        stage.PopulateOptions()
+        b.Branches = append(b.Branches, stage)
+    }
+
+}
+
+// Runs through entire story and maps out options
+func (b *Branch)ParseStory() string {
+    b.PopulateOptions()
+    f, err := json.Marshal(b)
+    if err != nil {
+        panic(err)
+    }
+    return string(f)
 }
