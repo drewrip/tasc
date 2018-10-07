@@ -2,9 +2,6 @@ package tasc
 
 import (
     "encoding/json"
-    "crypto/sha256"
-    "encoding/hex"
-    "fmt"
 )
 
 type Branch struct {
@@ -33,11 +30,9 @@ func (b *Branch)PopulateOptions(){
     // For each option listed in a tam file, parse into a Branch struct
     for _,x := range Opts{
         stage := Branch{}
-        fmt.Println("PLACE: " + x.Result)
+        stage.TextPath = x.Result
         stage.Choice = x.Input
         stage.Branches = []Branch{}
-        hash := sha256.Sum256([]byte(x.Result))
-        stage.TextPath = hex.EncodeToString(hash[:])
         stage.PopulateOptions()
         b.Branches = append(b.Branches, stage)
     }
