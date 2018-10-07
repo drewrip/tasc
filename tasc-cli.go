@@ -1,19 +1,23 @@
 package main
 
 import (
-    //"fmt"
     "flag"
     "github.com/drewrip/OpenTA/tasc"
+    "path/filepath"
+    "os"
 )
 
 func main(){
-    //buildName := flag.String("o", "Project", "Name of the project after successful build")
-
-    //Uses -s flag to specify source directory of .tam files
-    //srcDir := flag.String("s", "./", "Directory where the .tam source files are stored")
+    // Defines flags
+    defdir,_ := filepath.Abs("." + string(os.PathSeparator))
+    buildName := flag.String("o", "Project", "Name of the project after successful build")
+    buildDir := flag.String("d", defdir, "Where to build your story to")
 
     flag.Parse()
-    // Sets global path to source directory
-    tasc.SetPath(flag.Arg(0))
+    // Sets compile time variables
+    tasc.SetInputPath(flag.Arg(0))
+    tasc.SetOut(*buildDir)
+    tasc.SetName(*buildName)
+    tasc.SetBuildPath()
     tasc.Init()
 }
