@@ -1,14 +1,32 @@
 package tasc
 
 import (
+    "os"
     "fmt"
 )
 
 // Setting the path for the source .tam files
-var Path string
-func SetPath(p string){
-    Path = p
+var InputPath string
+var Out string
+var Name string
+var BuildPath string
+
+func SetInputPath(p string){
+    InputPath = p
 }
+
+func SetOut(p string){
+    Out = p
+}
+
+func SetName(n string){
+    Name = n
+}
+
+func SetBuildPath(){
+    BuildPath = Out + string(os.PathSeparator) + Name
+}
+
 
 //Creating the initial root branch of the story
 func Init(){
@@ -17,5 +35,8 @@ func Init(){
             Choice: "",
             Branches: []Branch{},
         }
-    fmt.Println(Story.ParseStory())
+    JSONStory := Story.ParseStory()
+    fmt.Println(JSONStory)
+    CreateDir()
+    BuildStories()
 }
