@@ -2,7 +2,6 @@ package tasc
 
 import (
     "os"
-    "fmt"
 )
 
 // Setting the path for the source .tam files
@@ -35,8 +34,8 @@ func Init(){
             Choice: "",
             Branches: []Branch{},
         }
-    JSONStory := Story.ParseStory()
-    fmt.Println(JSONStory)
+    Story.ParseStory()
     CreateDir()
     BuildStories()
+    Story.GenManifest()
 }
