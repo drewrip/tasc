@@ -1,0 +1,8 @@
+{
+    "title": "Minerals",
+    "description": "Sample story for development testing",
+    "author": "drewrip",
+    "agerec": 0,
+    "disclaimer": "This is a very terrible story and not meant to be interesting. Minerals was written to test compiler logic.",
+    "tags": ["sample", "testing", "blue", "dev"]
+}
