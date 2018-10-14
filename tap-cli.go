@@ -8,6 +8,7 @@ import (
     "bufio"
     "os"
     "strings"
+    "github.com/drewrip/OpenTA/tasc"
 )
 
 
@@ -66,6 +67,15 @@ func Init(s string){
     PATH = s
     rawJSON, _ := ioutil.ReadFile(PATH + string(os.PathSeparator) + "map.json")
     Story := Branch{}
+    StoryInfo := tasc.Info{}
+    rawSI,_ := ioutil.ReadFile(PATH + string(os.PathSeparator) + "info.json")
+    json.Unmarshal(rawSI, &StoryInfo)
+    fmt.Println(StoryInfo.Title)
+    fmt.Println("By: " + StoryInfo.Author)
+    if StoryInfo.AgeRec != 0{
+        fmt.Println("Author's Age Recommendation: " + string(StoryInfo.AgeRec))
+    }
+    fmt.Println("\n" + StoryInfo.Disclaimer)
     json.Unmarshal([]byte(rawJSON), &Story)
     Story.Update()
 }
