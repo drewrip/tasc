@@ -37,5 +37,6 @@ func Init(){
     Story.ParseStory()
     CreateDir()
     BuildStories()
-    Story.GenManifest()
+    Story.GenMap()
+    BuildInfo()
 }
