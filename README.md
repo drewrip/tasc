@@ -1,6 +1,4 @@
-# OpenTA
-
-Compiler and Player for Interactive Stories
+# tasc - Compiler and Player for Interactive Stories
 
 
 ### Compiler
@@ -8,7 +6,7 @@ Compiler and Player for Interactive Stories
 To build the compiler:
 
 ```
-go build tasc-cli.go
+go build cli/tasc-cli.go
 ```
 
 Every different scenario/branch in your story gets its own .tam file in the format specificied in [syntax.tam](syntax.tam). For an example of how this works, check out the [samples folder](/samples).
@@ -26,7 +24,7 @@ tasc-cli path/to/folder/with/tam/files/
 To build the player:
 
 ```
-go build tap-cli.go
+go build cli/tap-cli.go
 ```
 
 To play a story on the terminal:
